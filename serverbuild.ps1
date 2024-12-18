@@ -4,6 +4,8 @@
 #
 ######################################
 
+Get-WindowsCapability -Online | Where-Object {$_.Name -like "Language.Basic~~~fr-FR~*"}
+
 #variables
 $regionalsettingsURL = "https://raw.githubusercontent.com/alexcailyer/azure/main/CARegion.xml"
 $RegionalSettings = "D:\CARegion.xml"
