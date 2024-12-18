@@ -6,7 +6,7 @@
 
 #variables
 $regionalsettingsURL = "https://raw.githubusercontent.com/alexcailyer/azure/main/CARegion.xml"
-$RegionalSettings = "C:\CARegion.xml"
+$RegionalSettings = "D:\CARegion.xml"
 
 
 #downdload regional settings file
