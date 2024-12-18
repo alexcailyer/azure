@@ -8,7 +8,7 @@
     <gs:Locale Name="fr-FR" SetAsCurrent="true"/> 
 </gs:UserLocale>
 <!-- system locale -->
-<gs:SystemLocale Name="fr-FR"/>
+<gs:SystemLocale Name="fr-CA"/>
 <!-- GeoID -->
 <gs:LocationPreferences> 
     <gs:GeoID Value="39"/> 
