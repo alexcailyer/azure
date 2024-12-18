@@ -18,7 +18,7 @@ $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
 & $env:SystemRoot\System32\control.exe "intl.cpl,,/f:`"$RegionalSettings`""
 
 # Set languages/culture. Not needed perse.
-Set-WinSystemLocale fr-FR
+Set-WinSystemLocale fr-CA
 Set-WinUserLanguageList -LanguageList fr-FR -Force
 Set-Culture -CultureInfo fr-FR
 Set-WinHomeLocation -GeoId 39
