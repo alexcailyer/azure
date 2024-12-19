@@ -1,17 +1,27 @@
-# Script to define regional settings on Azure Virtual Machines deployed from the market place
-# Author: Alexandre Verkinderen
-# Blogpost: https://mscloud.be/configure-regional-settings-and-windows-locales-on-azure-virtual-machines/
-#
-######################################
+# uri LOF package Server 2022
+$uri = "https://go.microsoft.com/fwlink/p/?linkid=2195333"
 
-Get-WindowsCapability -Online | Where-Object {$_.Name -like "Language.Basic~~~fr-FR~*"}
+# download LOF package iso
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri $uri -OutFile "D:\lang.iso"
+
+#mount LOF
+$mountedImage = Mount-DiskImage -ImagePath "D:\lang.iso"
+
+# Get the volume information
+$volumeInfo = $mountedImage | Get-Volume
+
+# Extract the drive letter
+$driveLetter = $volumeInfo.DriveLetter
+
+cmd /c lpksetup /i fr-fr /p "$($driveLetter):\LanguagesAndOptionalFeatures\"
 
 #variables
 $regionalsettingsURL = "https://raw.githubusercontent.com/alexcailyer/azure/main/CARegion.xml"
 $RegionalSettings = "D:\CARegion.xml"
 
 
-#downdload regional settings file
+#download regional settings file
 $webclient = New-Object System.Net.WebClient
 $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
 
