@@ -1,12 +1,14 @@
+$Drive = "D:"
+
 # uri LOF package Server 2022
 $uri = "https://go.microsoft.com/fwlink/p/?linkid=2195333"
 
 # download LOF package iso
 $ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest -Uri $uri -OutFile "C:\lang.iso"
+Invoke-WebRequest -Uri $uri -OutFile "$Drive\lang.iso"
 
 #mount LOF
-$mountedImage = Mount-DiskImage -ImagePath "C:\lang.iso"
+$mountedImage = Mount-DiskImage -ImagePath "$Drive\lang.iso"
 
 # Get the volume information
 $volumeInfo = $mountedImage | Get-Volume
@@ -18,7 +20,7 @@ cmd /c lpksetup /i fr-fr /p "$($driveLetter):\LanguagesAndOptionalFeatures\"
 
 #variables
 $regionalsettingsURL = "https://raw.githubusercontent.com/alexcailyer/azure/main/CARegion.xml"
-$RegionalSettings = "C:\CARegion.xml"
+$RegionalSettings = "$Drive\CARegion.xml"
 
 
 #download regional settings file
