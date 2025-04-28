@@ -5,7 +5,7 @@
 </gs:UserList>
 <!-- user locale -->
 <gs:UserLocale> 
-    <gs:Locale Name="fr-FR" SetAsCurrent="true"/> 
+    <gs:Locale Name="fr-CA" SetAsCurrent="true"/> 
 </gs:UserLocale>
 <!-- system locale -->
 <gs:SystemLocale Name="fr-CA"/>
@@ -14,7 +14,7 @@
     <gs:GeoID Value="39"/> 
 </gs:LocationPreferences>
 <gs:MUILanguagePreferences>
-	<gs:MUILanguage Value="fr-FR"/>
+	<gs:MUILanguage Value="fr-CA"/>
 	<gs:MUIFallback Value="en-US"/>
 </gs:MUILanguagePreferences>
 <!-- input preferences -->
